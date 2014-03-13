@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Backup & Encrypt
 # C. d'Eon
 # 2014
@@ -14,7 +15,7 @@ echo "one moment..."
 
 destfree=`df -h $dest | grep / | awk '{ print $4}'`
 destfree2=`df $dest | grep / | awk '{ print $4}'`
-backupsize=`du -hs $backup_files | head -c 4`
+backupsize=`du -hs $backup_files | awk '{ print $1}'`
 backupsize2=`du $backup_files | awk '{ print $1}'` 
 
 echo ""
