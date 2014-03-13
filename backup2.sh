@@ -16,7 +16,7 @@ destfree2=`df $dest | grep / | awk '{ print $4}'`
 backupsize=`du -hs $backup_files | head -c 4`
 backupsize2=`du $backup_files | awk '{ print $1}'` 
 
-echo "NOTICE: " $backup_files "is" $backupsize "in size, and you have" $destfree" free on the target volume. OK to backup" $backup_files "into" $dest "? (y/n)"
+echo "NOTICE: " $backup_files "is" $backupsize "in size, and you have" $destfree "free on the target volume. OK to backup" $backup_files "into" $dest "? (y/n)"
 read yn
 
 if [[ $yn == [Yy] ]] && [[ $backupsize2 < $destfree2 ]]; then
