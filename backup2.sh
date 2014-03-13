@@ -8,7 +8,7 @@ today=`date +_%m_%d_%y`
 echo "please enter the directory you want to back up! ABSOLUTE PATH ONLY "
 read backup_files
 
-echo "please enter a destination directory! (no slash at the end) ABSOLUTE PATH ONLY "
+echo "please enter a destination directory! ABSOLUTE PATH ONLY "
 read dest 
 
 destfree=`df -h $dest | grep / | awk '{ print $4}'`
