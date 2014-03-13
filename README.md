@@ -1,4 +1,4 @@
-Backup & Encrypt: A simple bash script that backs up a user-defined folder into a user-defined folder, compressing the contents, encrypting the .tar with GPG then deleting the unencrypted tar, leaving an encrypted backup of your directory.
+Backup & Encrypt: A simple bash script that backs up a user-defined folder into a user-defined folder, compressing the contents, encrypting the .tar with GPG then deleting the unencrypted .tar, leaving an encrypted backup of your directory.
 
 Usage:
 
