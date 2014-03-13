@@ -1,4 +1,5 @@
 #!/usr/bin/env bash                                        
+
 # Backup & Encrypt
 # C. d'Eon
 # 2014
