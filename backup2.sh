@@ -14,7 +14,7 @@ if [[ -d $1 ]] && [[ -d $2 ]]; then
 else
     clear
     echo "*** Usage: ./backup.sh [folder to backup] [destination folder]"
-    echo "(ABSOLUTELY PATHS ONLY, NO '~')"
+    echo "(ABSOLUTE PATHS ONLY, NO '~')"
     echo ""
     echo "please enter the directory you want to back up! ABSOLUTE PATH ONLY "
     read -p "> " backup_files
