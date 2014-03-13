@@ -26,11 +26,11 @@ else
 
     echo "please enter a destination directory! ABSOLUTE PATH ONLY "
     read -p "> " dest 
+    
     if [[ ! -e $dest ]]; then
 	echo "directory does not exist!"
 	exit 0
     fi
-
 fi 
 
 echo "one moment..."
