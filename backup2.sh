@@ -1,5 +1,4 @@
-#!/usr/bin/env bash                                        
-
+#!/usr/bin/env bash
 # Backup & Encrypt
 # C. d'Eon
 # 2014
@@ -12,10 +11,15 @@ read backup_files
 echo "please enter a destination directory! (no slash at the end) ABSOLUTE PATH ONLY "
 read dest 
 
-echo "would you like to backup " $backup_files " into " $dest "? (y/n): "
+destfree=`df -h $dest | grep / | awk '{ print $4}'`
+destfree2=`df $dest | grep / | awk '{ print $4}'`
+backupsize=`du -hs $backup_files | head -c 4`
+backupsize2=`du $backup_files | awk '{ print $1}'` 
+
+echo "NOTICE: " $backup_files "is" $backupsize "in size, and you have" $destfree" free on the target volume. OK to backup" $backup_files "into" $dest "? (y/n)"
 read yn
 
-if [[ $yn == [Yy] ]]; then
+if [[ $yn == [Yy] ]] && [[ $backupsize2 < $destfree2 ]]; then
     cd $dest
     mkdir BACKUP$today
     cp -R -v $backup_files $dest/BACKUP$today
