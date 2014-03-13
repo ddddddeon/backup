@@ -6,12 +6,21 @@
 
 today=`date +_%m_%d_%y`
 
-echo "please enter the directory you want to back up! ABSOLUTE PATH ONLY "
-read -p "> " backup_files
+if [[ -e $1 ]] && [[ -e $2 ]]; then
+    backup_files=$1
+    dest=$2
+    continue 
+elif [[ -e $1 ]] && [[ ! -e $2 ]]; then 
+    echo "Usage: ./backup2.sh [folder to backup] [destination folder]"
+    exit 0
+else
+    echo "please enter the directory you want to back up! ABSOLUTE PATH ONLY "
+    read -p "> " backup_files
 
-echo "please enter a destination directory! ABSOLUTE PATH ONLY "
-read -p "> " dest 
-echo "one moment..."
+    echo "please enter a destination directory! ABSOLUTE PATH ONLY "
+    read -p "> " dest 
+    echo "one moment..."
+fi 
 
 destfree=`df -h $dest | grep / | awk '{ print $4}'`
 destfree2=`df $dest | grep / | awk '{ print $4}'`
