@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
 
 # Backup & Encrypt
 # C. d'Eon
@@ -24,12 +24,9 @@ read -p "> " yn
 
 if [[ $yn == [Yy] ]] && [[ $backupsize2 < $destfree2 ]]; then
     cd $dest
-    mkdir BACKUP$today
-    cp -R -v $backup_files $dest/BACKUP$today
-    tar -cvf BACKUP$today.tar $dest/BACKUP$today
+    tar -cvf BACKUP$today.tar $backup_files
     gpg -v -e BACKUP$today.tar
-    rm -rf BACKUP$today
-    rm -rf BACKUP$today.tar
+    rm  BACKUP$today.tar
 
 else
     echo "canceled!"
