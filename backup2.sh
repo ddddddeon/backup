@@ -1,4 +1,7 @@
 #!/usr/bin/env bash                                        
+# Backup & Encrypt
+# C. d'Eon
+# 2014
 
 today=`date +_%m_%d_%y`
 
