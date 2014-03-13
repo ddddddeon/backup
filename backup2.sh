@@ -53,5 +53,4 @@ if [[ $yn == [Yy] ]] && [[ $backupsize2 < $destfree2 ]]; then
 else
     echo "canceled!"
     exit 0
-
 fi
