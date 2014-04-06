@@ -2,7 +2,7 @@ Backup & Encrypt: A simple bash script that backs up a user-defined folder into 
 
 Usage:
 
-./backup2.sh [</absolute/path/to/backup-folder>] [</absolute/path/to/destination-folder>]
+./backup2.sh [/absolute/path/to/backup-folder] [/absolute/path/to/destination-folder]
  + Must use absolute paths!
  + Enter your PGP key when prompted.
 
